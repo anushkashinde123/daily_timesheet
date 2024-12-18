@@ -1,0 +1,61 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-11-28 11:07:07.386724",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "day_limit",
+  "lesshours",
+  "morehours",
+  "time"
+ ],
+ "fields": [
+  {
+   "fieldname": "day_limit",
+   "fieldtype": "Int",
+   "label": "Day limit"
+  },
+  {
+   "fieldname": "lesshours",
+   "fieldtype": "Int",
+   "label": "less(hours)"
+  },
+  {
+   "fieldname": "morehours",
+   "fieldtype": "Int",
+   "label": "more(hours)"
+  },
+  {
+   "fieldname": "time",
+   "fieldtype": "Table",
+   "label": "Reminder Time",
+   "options": "Reminder Timing"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2024-12-09 14:48:41.622811",
+ "modified_by": "Administrator",
+ "module": "Daily Timesheet",
+ "name": "Settings timesheet",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

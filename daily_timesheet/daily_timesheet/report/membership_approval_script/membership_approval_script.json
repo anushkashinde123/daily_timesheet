@@ -1,0 +1,27 @@
+{
+ "add_total_row": 0,
+ "columns": [],
+ "creation": "2024-12-06 16:16:31.994389",
+ "disable_prepared_report": 0,
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letter_head": "Test Letterhead",
+ "modified": "2024-12-06 16:16:31.994389",
+ "modified_by": "Administrator",
+ "module": "Daily Timesheet",
+ "name": "Membership Approval script",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "ref_doctype": "Membership Approval",
+ "report_name": "Membership Approval script",
+ "report_type": "Script Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  }
+ ]
+}

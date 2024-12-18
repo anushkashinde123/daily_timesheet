@@ -27,7 +27,7 @@ app_license = "MIT"
 # page_js = {"page" : "public/js/file.js"}
 
 # include js in doctype views
-# doctype_js = {"doctype" : "public/js/doctype.js"}
+doctype_js = {"Timesheet" : "daily_timesheet/custom_script/timesheet/timesheet.js"}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
@@ -116,24 +116,41 @@ app_license = "MIT"
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
+#  doc_events = {
+# 	"Timesheet": {
+#         "validate":'daily_timesheet.daily_timesheet.custom_script.timesheet.test',
+# # 		"on_update": "method",
+# # 		"on_cancel": "method",
+# # 		"on_trash": "method",
 # 	}
 # }
+
+doc_events = {
+	"Timesheet": {
+		# "on_update": "method",
+		# "on_cancel": "method",
+		# "on_save": "daily_timesheet.daily_timesheet.custom_script.employee.employee.on_save",
+		# "on_submit": "daily_timesheet.daily_timesheet.custom_script.timesheet.timesheet.on_submit",
+        "validate":"daily_timesheet.daily_timesheet.custom_script.timesheet.timesheet.test"
+	}
+}
 
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
+scheduler_events = {
+	
+	"cron": {
+        "* * * * */1": ["daily_timesheet.daily_timesheet.custom_script.timesheet.timesheet.cron",
+					'daily_timesheet.daily_timesheet.custom_script.timesheet.timesheet.calculate_employee_hours']
+    },
 # 	"all": [
 # 		"daily_timesheet.tasks.all"
 # 	],
-# 	"daily": [
-# 		"daily_timesheet.tasks.daily"
-# 	],
+
+	# "daily": [
+	# 	"daily_timesheet.daily_timesheet.custom_script.timesheet.timesheet.calculate_employee_hours"
+	# ],
 # 	"hourly": [
 # 		"daily_timesheet.tasks.hourly"
 # 	],
@@ -143,7 +160,7 @@ app_license = "MIT"
 # 	"monthly": [
 # 		"daily_timesheet.tasks.monthly"
 # 	],
-# }
+ }
 
 # Testing
 # -------
